@@ -40,3 +40,4 @@ cap.release()
 cv2.destroyAllWindows()
 np.save(f"data/{LABEL}.npy", np.array(X))
 print(f"Saved {len(X)} samples for '{LABEL}'")
+
