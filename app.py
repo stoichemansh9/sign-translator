@@ -9,11 +9,14 @@ CONF_THRESHOLD = 0.8   # predictions below this confidence are ignored
 WINDOW = 10            # majority vote over the last 10 frames
 MIN_VOTES = 7          # at least 7 matching frames needed
 COOLDOWN = 2.0         # gap between two words (seconds)
+def speak(text):
+    engine = pyttsx3.init()   # har baar naya engine
+    engine.say(text)
+    engine.runAndWait()
+    engine.stop()
 
 clf = joblib.load("model.joblib")
 detector = make_detector()
-engine = pyttsx3.init()
-
 window = deque(maxlen=WINDOW)
 history = []
 last_spoken, last_time = None, 0.0
@@ -39,8 +42,8 @@ while True:
         word, count = votes.most_common(1)[0]
         if count >= MIN_VOTES and word != last_spoken and time.time() - last_time > COOLDOWN:
             history.append(word)
-            engine.say(word)
-            engine.runAndWait()
+            print("Speaking:", word)   # terminal mein bhi dikhega
+            speak(word)
             last_spoken, last_time = word, time.time()
             window.clear()
     else:
