@@ -1,33 +1,58 @@
-# Real-Time Sign Language Translator for Classrooms
+# Real-Time AI Sign Language Translator for Classrooms
+
+**Institution:** Gautam Buddha University
+**Degree:** B.Tech CSE (Specialization in AI)
 
 ## Problem
-Hearing/speech-impaired students find it hard to ask doubts in class.
+Lakhs of hearing and speech-impaired students face communication barriers in
+classrooms. Asking a doubt often needs a teacher or interpreter, which is not
+always available.
 
 ## Solution
-We track hand gestures from a webcam (MediaPipe, 21 landmarks), predict the sign
-with an ML classifier, and convert it into text + speech.
+A webcam tracks the student's hand gestures in real time. MediaPipe extracts
+21 hand landmarks, a trained classifier predicts the sign, and the result is
+shown as text on screen and spoken aloud through text-to-speech.
+
+## Pipeline
+Video Capture → Hand Landmark Detection (MediaPipe) → AI Classifier (scikit-learn) → Text + Speech
+
+## Two-Phase Approach
+1. **Phase 1 (Quick Win):** Google Teachable Machine prototype as a backup demo.
+2. **Phase 2 (Upgrade):** Python + OpenCV + MediaPipe for landmark-based recognition.
 
 ## Scope
-- Isolated signs (~10 words): hello, doubt, yes, no, repeat, help, ...
-- Sign language: ISL (or whichever you chose)
+- Isolated signs only (about 10 words): hello, doubt, yes, no, ...
+- Sign language: ISL (or whichever was chosen)
 
 ## Results
-- Dataset: X samples, Y participants
+- Dataset: __ samples, __ participants
 - Test accuracy: __%
 - Average latency: __ ms | FPS: __
 
 ## Limitations
-- Effect of lighting and background
+- Lighting and background affect detection accuracy
 - Isolated signs only, no continuous signing
 - Single camera angle
+- Model is trained only on the signers in the dataset
 
 ## Future Scope
-Continuous recognition with LSTM/Transformer, mobile app, larger vocabulary.
+- Continuous sign recognition with LSTM or Transformer models
+- Mobile app
+- Larger vocabulary
 
 ## Team
-| Member | Role |
+| Name | Role |
 |---|---|
-| Name 1 | Data collection, dataset |
-| Name 2 | Model training, evaluation |
-| Name 3 | App + TTS integration |
-| Name 4 | Report, PPT, testing |
+| Hemansh | Core ML & Deployment Lead |
+| Durga | Video Processing & Pipeline Engineer |
+| Divay Singh Bhati | Biometric Landmark Engineer |
+| Anshi Goyal | UX Logic & System Integration Engineer |
+
+## How to Run
+```bash
+py -3.11 -m venv venv
+venv\Scripts\python.exe -m pip install -r requirements.txt
+venv\Scripts\python.exe collect.py hello
+venv\Scripts\python.exe train.py
+venv\Scripts\python.exe app.py
+```
