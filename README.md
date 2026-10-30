@@ -25,9 +25,9 @@ Video Capture → Hand Landmark Detection (MediaPipe) → AI Classifier (scikit-
 - Sign language: ISL (or whichever was chosen)
 
 ## Results
-- Dataset: __ samples, __ participants
-- Test accuracy: __%
-- Average latency: __ ms | FPS: __
+- Dataset: 16 samples, 4 participants
+- Test accuracy: modrate
+- Average latency: 21.3 ms | FPS: 46.9
 
 ## Limitations
 - Lighting and background affect detection accuracy
@@ -51,8 +51,5 @@ Video Capture → Hand Landmark Detection (MediaPipe) → AI Classifier (scikit-
 ## How to Run
 ```bash
 py -3.11 -m venv venv
-venv\Scripts\python.exe -m pip install -r requirements.txt
-venv\Scripts\python.exe collect.py hello
-venv\Scripts\python.exe train.py
 venv\Scripts\python.exe app.py
 ```
