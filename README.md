@@ -47,6 +47,7 @@ Video Capture → Hand Landmark Detection (MediaPipe) → AI Classifier (scikit-
 | Durga | Video Processing & Pipeline Engineer |
 | Divay Singh Bhati | Biometric Landmark Engineer |
 | Anshi Goyal | UX Logic & System Integration Engineer |
+| kavita prashad | ppt and presentation maker |
 
 ## How to Run
 ```bash
