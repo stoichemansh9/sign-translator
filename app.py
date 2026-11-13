@@ -5,9 +5,9 @@ import joblib
 import pyttsx3
 from utils import make_detector, extract
 
-CONF_THRESHOLD = 0.8   # predictions below this confidence are ignored
-WINDOW = 10            # majority vote over the last 10 frames
-MIN_VOTES = 7          # at least 7 matching frames needed
+CONF_THRESHOLD = 0.6   # predictions below this confidence are ignored
+WINDOW = 8            # majority vote over the last 8 frames
+MIN_VOTES = 5          # at least 5 matching frames needed
 COOLDOWN = 2.0         # gap between two words (seconds)
 def speak(text):
     engine = pyttsx3.init()   # har baar naya engine
